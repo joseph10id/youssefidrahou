@@ -1,4 +1,4 @@
-/*! Auxin WordPress Framework - v2.5.8 (2020-04-11)
+/*! Auxin WordPress Framework - v2.5.9 (2020-04-26)
  *  Scripts for initializing plugins 
  *  http://averta.net
  *  (c) 2014-2020 averta;
@@ -506,17 +506,18 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
 
         var $targets = $scope.find( '.aux-search-ajax' );
 
-        function ajaxSearchRequest( searchKey, cat, outputWrapper, spinner ) {
+        function ajaxSearchRequest( searchKey, cat, postTypes, outputWrapper, spinner ) {
             
             spinner.removeClass( 'aux-spinner-hide' );
             outputWrapper.empty();
 
             var data = {
-                action  : 'aux_modern_search_handler',
-                s       : searchKey,
-                cat     : cat.id,
-                taxonomy: cat.taxonomy,
-                'post_type': cat.postType
+                action      : 'aux_modern_search_handler',
+                s           : searchKey,
+                cat         : cat.id,
+                taxonomy    : cat.taxonomy,
+                'post_type' : cat.postType,
+                'post_types': postTypes
             }
 
             $.ajax({
@@ -528,13 +529,11 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
             .done( function( res ) {
                 var response = JSON.parse( res );
                 var output = generateMarkup( response.data );
-                
+
                 setTimeout( function() {
-                    spinner.on('transitionend', function (event) {
-                        outputWrapper.html(output);
-                        spinner.addClass( 'aux-spinner-hide' );
-                    });
-                }, 1000 )
+                    outputWrapper.html(output);
+                    spinner.addClass( 'aux-spinner-hide' );
+                }, 1500 )
 
             });
 
@@ -579,9 +578,11 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
                 catID           = 0,
                 taxonomy        = $cats.length ? $cats.find('option:selected').data('taxonomy') : ['category'],
                 postType        = $cats.length ? $cats.find('option:selected').data('post-type') : ['post'],
+                postTypes       = $field.data('post-types'),
                 delay           = 0,
                 fieldValue      = $field.val();
             
+
             $field.on( 'keyup' , function( event ) {
                 var searchKey = event.target.value;
 
@@ -595,7 +596,7 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
 
                 delay = setTimeout( function(){
                     fieldValue = event.target.value;
-                    ajaxSearchRequest( searchKey, { id: catID, taxonomy: taxonomy, postType: postType } , $ajaxOutput, $spinner );
+                    ajaxSearchRequest( searchKey, { id: catID, taxonomy: taxonomy, postType: postType }, postTypes , $ajaxOutput, $spinner );
                 }, 700);
 
             });
@@ -610,7 +611,7 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
                     taxonomy = selectedTax;
                     postType = selectedPostType;
 
-                    ajaxSearchRequest( $field.val(), { id: catID, taxonomy: taxonomy, postType: postType }, $ajaxOutput, $spinner );
+                    ajaxSearchRequest( $field.val(), { id: catID, taxonomy: taxonomy, postType: postType }, postTypes, $ajaxOutput, $spinner );
                 });
             }
             
@@ -2017,12 +2018,18 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
             }
 
             var $closeBtn       = $target.find( '.aux-panel-close' ),
+                $searchField    = $target.find( '.aux-search-field' ),
                 overlayIsClosed = true;
             
             // Listeners
             $this.on( 'click' , function() {
                 auxinToggleOverlayContainer( $target, overlayIsClosed );
                 overlayIsClosed = !overlayIsClosed;
+                
+                if ( !overlayIsClosed ) {
+                    $searchField.focus();
+                }
+
             } );
 
             $closeBtn.on( 'click' , function() {

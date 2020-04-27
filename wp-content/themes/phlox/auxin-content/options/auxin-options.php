@@ -1623,8 +1623,8 @@ function auxin_define_options_info( $fields_sections_list ){
         'section'        => 'appearance-section-forms',
         'default'        => '',
         'type'           => 'group_typography',
-        'selectors'      => '#reply-title',
-        'transport'      => 'postMessage',
+        'selectors'      => '#reply-title > span',
+        'transport'      => 'postMessage'
     );
 
     $options[] = array(
@@ -1660,14 +1660,26 @@ function auxin_define_options_info( $fields_sections_list ){
     );
 
     $options[] = array(
-        'title'          => __( 'Form Button Typography', 'phlox' ),
+        'title'          => __( 'Submit Button Typography', 'phlox' ),
         'description'    => '',
         'id'             => 'comment_forms_button_typo',
         'section'        => 'appearance-section-forms',
         'default'        => '',
         'type'           => 'group_typography',
         'selectors'      => '#commentform .form-submit input[type="submit"]',
-        'transport'      => 'postMessage',
+        'transport'      => 'postMessage'
+    );
+
+
+    $options[] = array(
+        'title'          => __( 'Form Placeholder Text', 'phlox' ),
+        'description'    => '',
+        'id'             => 'comment_forms_placeholder_typo',
+        'section'        => 'appearance-section-forms',
+        'default'        => '',
+        'type'           => 'group_typography',
+        'selectors'      => '#commentform input::placeholder, #commentform textarea::placeholder',
+        'transport'      => 'postMessage'
     );
 
     $options[] = array(
@@ -4567,7 +4579,7 @@ function auxin_define_options_info( $fields_sections_list ){
         ),
         'default'       => '1'
     );
-    
+
     if ( class_exists( 'wp_ulike' ) ) {
         $options[] = array(
             'title'       => __( 'Display Like Button', 'phlox' ),
@@ -4633,7 +4645,63 @@ function auxin_define_options_info( $fields_sections_list ){
                )
             )
         );
-    
+
+        $options[] = array(
+            'title'         => __( 'Icon Color', 'phlox' ),
+            'description'   => __( 'Like icon color','phlox' ),
+            'id'            => 'blog_post_like_icon_color',
+            'section'       => 'blog-section-single',
+            'transport'     => 'postMessage',
+            'type'          => 'color',
+            'default'       => '',
+            'style_callback' => function( $value = null ){
+                if( ! $value ){
+                    $value = esc_attr( auxin_get_option( 'blog_post_like_icon_color' ) );
+                }
+                return $value ? ".single-post .wp_ulike_general_class button::before { color:{$value}; }" : '';
+            },
+            'dependency'  => array(
+                array(
+                     'id'      => 'show_post_single_meta_info',
+                     'value'   => array('1'),
+                     'operator'=> ''
+                ),
+                array(
+                    'id'      => 'show_blog_post_like_button',
+                    'value'   => array('1'),
+                    'operator'=> ''
+               )
+            )
+        );
+
+        $options[] = array(
+            'title'         => __( 'Icon Hover Color', 'phlox' ),
+            'description'   => __( 'Like icon hover color','phlox' ),
+            'id'            => 'blog_post_like_icon_hover_color',
+            'section'       => 'blog-section-single',
+            'transport'     => 'postMessage',
+            'type'          => 'color',
+            'default'       => '',
+            'style_callback' => function( $value = null ){
+                if( ! $value ){
+                    $value = esc_attr( auxin_get_option( 'blog_post_like_icon_hover_color' ) );
+                }
+                return $value ? ".single-post .wp_ulike_general_class button:hover::before { color:{$value}; }" : '';
+            },
+            'dependency'  => array(
+                array(
+                     'id'      => 'show_post_single_meta_info',
+                     'value'   => array('1'),
+                     'operator'=> ''
+                ),
+                array(
+                    'id'      => 'show_blog_post_like_button',
+                    'value'   => array('1'),
+                    'operator'=> ''
+               )
+            )
+        );
+
         $options[] = array(
             'title'       => __( 'Like Button Icon Size', 'phlox' ),
             'id'          => 'blog_post_like_icon_size',
@@ -4662,7 +4730,7 @@ function auxin_define_options_info( $fields_sections_list ){
                 return $value ? ".single-post .wp_ulike_general_class button::before { font-size:{$value}px; }" : '';
             }
         );
-    
+
         $options[] = array(
             'title'          => __( 'Like Button Margin', 'phlox' ),
             'id'             => 'blog_post_like_margin',
@@ -4711,6 +4779,62 @@ function auxin_define_options_info( $fields_sections_list ){
         'transport'   => 'refresh',
         'type'        => 'icon',
         'default'     => 'auxicon-share',
+        'dependency'  => array(
+            array(
+                 'id'      => 'show_post_single_meta_info',
+                 'value'   => array('1'),
+                 'operator'=> ''
+            ),
+            array(
+                'id'      => 'show_blog_post_share_button',
+                'value'   => array('1'),
+                'operator'=> ''
+           )
+        )
+    );
+
+    $options[] = array(
+        'title'         => __( 'Icon Color', 'phlox' ),
+        'description'   => __( 'Like icon color','phlox' ),
+        'id'            => 'blog_post_share_button_icon_color',
+        'section'       => 'blog-section-single',
+        'transport'     => 'postMessage',
+        'type'          => 'color',
+        'default'       => '',
+        'style_callback' => function( $value = null ){
+            if( ! $value ){
+                $value = esc_attr( auxin_get_option( 'blog_post_share_button_icon_color' ) );
+            }
+            return $value ? ".single-post .aux-single-post-share span::before { color:{$value}; }" : '';
+        },
+        'dependency'  => array(
+            array(
+                 'id'      => 'show_post_single_meta_info',
+                 'value'   => array('1'),
+                 'operator'=> ''
+            ),
+            array(
+                'id'      => 'show_blog_post_share_button',
+                'value'   => array('1'),
+                'operator'=> ''
+           )
+        )
+    );
+
+    $options[] = array(
+        'title'         => __( 'Icon Hover Color', 'phlox' ),
+        'description'   => __( 'Like icon hover color','phlox' ),
+        'id'            => 'blog_post_share_button_icon_hover_color',
+        'section'       => 'blog-section-single',
+        'transport'     => 'postMessage',
+        'type'          => 'color',
+        'default'       => '',
+        'style_callback' => function( $value = null ){
+            if( ! $value ){
+                $value = esc_attr( auxin_get_option( 'blog_post_share_button_icon_hover_color' ) );
+            }
+            return $value ? ".single-post .aux-single-post-share span:hover::before { color:{$value}; }" : '';
+        },
         'dependency'  => array(
             array(
                  'id'      => 'show_post_single_meta_info',
@@ -4775,7 +4899,7 @@ function auxin_define_options_info( $fields_sections_list ){
            )
         ),
     );
-    
+
     $options[] = array(
         'title'       => __( 'Display Tags Section', 'phlox' ),
         'description' => __( 'Enable it to display tags section under the post content.', 'phlox' ),

@@ -2,6 +2,7 @@
 
 // Call the instance of auxin upgrader
 Auxin_Upgrader_Prepare::get_instance();
+Auxels_System_Check::get_instance();
 
 // load admin related functions
 include_once( 'admin-the-functions.php' );

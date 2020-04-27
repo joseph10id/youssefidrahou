@@ -1690,6 +1690,22 @@ class Auxin_Demo_Importer {
             }
         }
 
+        preg_match_all('/"icon_list":(\[.*?\])/', $meta, $icon_lists, PREG_SET_ORDER );
+        if ( !empty( $icon_lists ) ) {
+            foreach ( $icon_lists as $list_key => $icon_list ) {
+                preg_match_all( '/\{\"url":.*?\}/' , $icon_list[0], $list );
+                $matches = !empty( $list ) ? array_merge( $matches, $list ) : $matches;
+            }
+        }
+
+        preg_match_all('/"carousel":(\[.*?\])/', $meta, $icon_lists, PREG_SET_ORDER );
+        if ( !empty( $icon_lists ) ) {
+            foreach ( $icon_lists as $list_key => $icon_list ) {
+                preg_match_all( '/\{\"id":.*?\}/' , $icon_list[0], $list );
+                $matches = !empty( $list ) ? array_merge( $matches, $list ) : $matches;
+            }
+        }
+
         // remove empties
         $matches = array_filter( $matches );
 

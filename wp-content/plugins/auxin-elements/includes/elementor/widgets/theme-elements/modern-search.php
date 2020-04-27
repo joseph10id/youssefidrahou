@@ -157,7 +157,7 @@ class ModernSearch extends Widget_Base {
                 'label_on'     => __( 'On', 'auxin-elements' ),
                 'label_off'    => __( 'Off', 'auxin-elements' ),
                 'return_value' => 'yes',
-                'default'      => 'no',
+                'default'      => 'yes',
                 'separator'    => 'before'
             ]
         );
@@ -899,13 +899,13 @@ class ModernSearch extends Widget_Base {
         <div <?php echo $this->get_render_attribute_string( 'form_wrapper' );?>>
             <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" >
                 <div class="aux-search-input-form">
-                    <input type="text" class="aux-search-field"  placeholder="<?php esc_attr_e('Search...', 'auxin-elements' ); ?>" name="s" autocomplete="off" />
+                    <input type="text" class="aux-search-field"  placeholder="<?php esc_attr_e('Search...', 'auxin-elements' ); ?>" name="s" autocomplete="off" data-post-types="<?php echo esc_attr ( wp_json_encode( $args['post_types'] ) ) ;?>" />
                     <?php if ( $args['display_cats'] ) { ;?>
                         <?php $this->render_category( ['post_types' => $args['post_types'] ] );?>
                     <?php };?>
                     <?php if ( $args['display_submit'] ) { ;?>
                         <?php if ( $args['display_fill'] ) { ;?>
-                            <input type="submit" class="aux-fill-search-submit" value="<?php esc_attr_e( 'Search', THEME_DOMAIN ); ?>" >
+                            <input type="submit" class="aux-fill-search-submit" value="<?php esc_attr_e( 'Search', THEME_DOMAIN ); ?> " >
                         <?php } else { ;?>
                             <div class="aux-submit-icon-container auxicon-search-4">
                                 <input type="submit" class="aux-iconic-search-submit" value="<?php esc_attr_e( 'Search', 'auxin-elements' ); ?>" >
@@ -959,7 +959,7 @@ class ModernSearch extends Widget_Base {
      * @access protected
      */
     protected function get_post_types() {
-        return auxin_general_post_types_category_slug();
+        return auxin_get_available_post_types_for_search();
     }
 
      /**

@@ -1,4 +1,4 @@
-/*! Auxin WordPress Framework - v2.5.8 - 2020-04-11
+/*! Auxin WordPress Framework - v2.5.9 - 2020-04-26
  *  Scripts for initializing admin plugins 
 
  *  http://averta.net
@@ -845,11 +845,11 @@
 
                     OptionControls.inputAdapter( input, container,
                         function( optionControl ){ // for onchange
-                            auxin_embed_controller_styles('auxin-customizer-css-', control.id, optionControl.generateCSS() );
+                            auxin_embed_controller_styles('auxin-customizer-css-', control.id, optionControl.toCSS() );
                         },
                         function( optionControl ) { // for init
                             wp.customize.previewer.bind('ready', function(){
-                                auxin_embed_controller_styles('auxin-customizer-css-', control.id, optionControl.generateCSS() );
+                                auxin_embed_controller_styles('auxin-customizer-css-', control.id, optionControl.toCSS() );
                             });
                         }
                     );

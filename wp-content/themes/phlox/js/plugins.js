@@ -1,4 +1,4 @@
-/*! Auxin WordPress Framework - v2.5.8 - 2020-04-11
+/*! Auxin WordPress Framework - v2.5.9 - 2020-04-26
  *  All required plugins 
  *  http://averta.net
  */

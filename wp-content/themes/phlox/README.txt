@@ -4,7 +4,7 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-
 Requires PHP: 5.4
 Requires at least: 4.6
 Tested up to: 5.3.3
-Stable tag: 2.5.8
+Stable tag: 2.5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,12 @@ Phlox bundles the following third-party resources:
 
 
 == Changelog ==
+
+= 2.5.9 =
+- [Improvement]: Improvements for dimensions controller in customizer applied.
+- [New]: New options for customizing share and like buttons added to customizer.
+- [New]: New options for customizing comment form added.
+
 
 = 2.5.7 =
 - [New]: New skin and background options added to the modern button element.

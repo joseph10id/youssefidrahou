@@ -231,7 +231,7 @@ function auxels_ajax_search() {
     $available_search_post_types = auxin_get_available_post_types_for_search();
     
     if ( ! empty( $_GET['post_types'] ) ) {
-        $post_types = explode( ',', sanitize_text_field( $_GET['post_types'] ) ); 
+        $post_types = $_GET['post_types'];
     } else {
         $post_types = array_keys( $available_search_post_types );
     }

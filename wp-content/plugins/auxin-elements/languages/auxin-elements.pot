@@ -1,9 +1,9 @@
 # Averta Copyright (c) {2020}
 msgid ""
 msgstr ""
-"Project-Id-Version: Phlox Core Elements 2.5.8\n"
+"Project-Id-Version: Phlox Core Elements 2.5.10\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2020-04-11 12:15:01+00:00\n"
+"POT-Creation-Date: 2020-04-26 12:06:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -264,6 +264,31 @@ msgstr ""
 
 #: admin/includes/admin-the-functions.php:315
 msgid "Error while saving the template."
+msgstr ""
+
+#: admin/includes/classes/class-auxels-system-check.php:20
+msgid "System Status Check By Averta"
+msgstr ""
+
+#: admin/includes/classes/class-auxels-system-check.php:33
+msgid "Required and recommended php ini settings passed successfully"
+msgstr ""
+
+#: admin/includes/classes/class-auxels-system-check.php:36
+msgid "Performance"
+msgstr ""
+
+#: admin/includes/classes/class-auxels-system-check.php:41
+msgid "Maximum execution time test passed"
+msgstr ""
+
+#: admin/includes/classes/class-auxels-system-check.php:48
+msgid "Warning"
+msgstr ""
+
+#: admin/includes/classes/class-auxels-system-check.php:49
+#: admin/includes/classes/class-auxels-system-check.php:63
+msgid "We recommend setting max execution time to at least 60."
 msgstr ""
 
 #: admin/includes/classes/class-auxin-license-activation.php:105
@@ -2159,268 +2184,86 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:162
+#: includes/classes/class-auxin-welcome-sections.php:165
 msgid "System Status"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:178
+#: includes/classes/class-auxin-welcome-sections.php:181
 msgid "Go Pro"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:198
-msgid ""
-"Some informaition about your WordPress installation which can be helpful "
-"for debugging or monitoring your website."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:204
-msgid "WordPress Environment"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:209
-msgid "Home URL"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:210
-msgid "The URL of your site's homepage."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:214
-#: includes/elementor/modules/dynamic-tags/site-url.php:18
-msgid "Site URL"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:215
-msgid "The root URL of your site."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:219
-msgid "WP Version"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:220
-msgid "The version of WordPress installed on your site."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:224
-msgid "WP Multisite"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:225
-msgid "Whether or not you have WordPress Multisite enabled."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:229
-msgid "WP Memory Limit"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:230
-msgid "The maximum amount of memory (RAM) that your site can use at one time."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:240
-msgid "WP Permalink"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:241
-msgid "The WordPress permalink structer."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:245
-msgid "WP Debug Mode"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:246
-msgid "Displays whether or not WordPress is in Debug Mode."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:250
-#: includes/elements/code.php:73
-msgid "Language"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:251
-msgid "The current language used by WordPress. Default = English"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:260
-msgid "Server Environment"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:265
-#: includes/classes/class-auxin-welcome-sections.php:277
-msgid "Server Info"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:266
-#: includes/classes/class-auxin-welcome-sections.php:278
-msgid "Information about the web server that is currently hosting your site."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:270
-msgid "PHP Version"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:271
-msgid "The version of PHP installed on your hosting server."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:283
-msgid "PHP Post Max Size"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:284
-msgid "The largest file size that can be contained in one post."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:288
-msgid "PHP Time Limit"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:289
-msgid ""
-"The amount of time (in seconds) that your site will spend on a single "
-"operation before timing out (to avoid server lockups)"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:294
-msgid ""
-"%s - We recommend setting max execution time to at least 60. See: <a "
-"href=\"%s\" target=\"_blank\">Increasing max execution to PHP</a>"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:302
-msgid "PHP Max Input Vars"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:303
-msgid ""
-"The maximum number of variables your server can use for a single function "
-"to avoid overloads."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:307
-msgid "SUHOSIN Installed"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:308
-msgid ""
-"Suhosin is an advanced protection system for PHP installations. It was "
-"designed to protect your servers on the one hand against a number of well "
-"known problems in PHP applications and on the other hand against potential "
-"unknown vulnerabilities within these applications or the PHP core itself. "
-"If enabled on your server, Suhosin may need to be configured to increase "
-"its data submission limits."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:313
-msgid "MySQL Version"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:314
-msgid "The version of MySQL installed on your hosting server."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:324
-msgid "Max Upload Size"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:325
-msgid "The largest file size that can be uploaded to your WordPress installation."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:329
-msgid "Default Timezone is UTC"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:330
-msgid "The default timezone for your server."
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:334
-msgid "Default timezone is %s - it should be UTC"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:346
-msgid "Active Plugins"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:365
-msgid "Visit plugin homepage"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:400
+#: includes/classes/class-auxin-welcome-sections.php:208
 msgid "How likely are you to recommend %s to a friend?"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:413
+#: includes/classes/class-auxin-welcome-sections.php:221
 msgid "Don't like it"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:414
+#: includes/classes/class-auxin-welcome-sections.php:222
 msgid "Like it so much"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:422
+#: includes/classes/class-auxin-welcome-sections.php:230
 msgid ""
 "Thanks for using Phlox theme. If you are enjoying this theme, please "
 "support us by %s submitting 5 star rate here%s. That would be a huge help "
 "for us to continue developing this theme."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:428
+#: includes/classes/class-auxin-welcome-sections.php:236
 msgid "Please explain why you gave this score (optional)"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:431
+#: includes/classes/class-auxin-welcome-sections.php:239
 msgid ""
 "Please do not use this form to get support, in this case please check the "
 "%s help section %s"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:438
+#: includes/classes/class-auxin-welcome-sections.php:246
 #: includes/elementor/widgets/theme-elements/modern-search.php:124
 #: includes/elements/contact-form.php:228
 msgid "Submit"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:442
+#: includes/classes/class-auxin-welcome-sections.php:250
 msgid "Submitting your feedback .."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:466
+#: includes/classes/class-auxin-welcome-sections.php:274
 msgid "Thanks for your feedback"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:468
+#: includes/classes/class-auxin-welcome-sections.php:276
 msgid "Please try again and fill up at least the feedback field."
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:512
+#: includes/classes/class-auxin-welcome-sections.php:320
 msgid "Changelog"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:514
+#: includes/classes/class-auxin-welcome-sections.php:322
 msgid "Follow Us"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:516
+#: includes/classes/class-auxin-welcome-sections.php:324
 msgid "Follow us on Twitter"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:517
+#: includes/classes/class-auxin-welcome-sections.php:325
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:518
+#: includes/classes/class-auxin-welcome-sections.php:326
 msgid "Follow us on Instagram"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:519
+#: includes/classes/class-auxin-welcome-sections.php:327
 msgid "Follow us on Envato"
 msgstr ""
 
-#: includes/classes/class-auxin-welcome-sections.php:520
+#: includes/classes/class-auxin-welcome-sections.php:328
 msgid "Subscribe to Phlox YouTube channel"
 msgstr ""
 
@@ -3690,6 +3533,10 @@ msgstr ""
 #: includes/elementor/widgets/theme-elements/site-title.php:50
 #: includes/elementor/widgets/theme-elements/site-title.php:295
 msgid "Site Title"
+msgstr ""
+
+#: includes/elementor/modules/dynamic-tags/site-url.php:18
+msgid "Site URL"
 msgstr ""
 
 #: includes/elementor/modules/dynamic-tags/user-info.php:19
@@ -9116,6 +8963,10 @@ msgstr ""
 msgid "Code title, leave it empty if you don`t need title."
 msgstr ""
 
+#: includes/elements/code.php:73
+msgid "Language"
+msgstr ""
+
 #: includes/elements/code.php:79
 msgid "JavaScript"
 msgstr ""
@@ -11790,11 +11641,6 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://averta.net"
-msgstr ""
-
-#: includes/classes/class-auxin-welcome-sections.php:370
-msgctxt "by author"
-msgid "by %s"
 msgstr ""
 
 #: includes/general-functions.php:2265

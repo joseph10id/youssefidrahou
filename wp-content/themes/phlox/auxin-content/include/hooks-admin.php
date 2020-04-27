@@ -424,7 +424,8 @@ function auxin_add_option_styles( $css ){
 
                     if( ( '{' === $replacement_value[0] ) && ( $parsed_json = json_decode($replacement_value) ) && (json_last_error() == JSON_ERROR_NONE) ){
                         $css_generator = new Auxin_CSS_Generator_Option_Manager();
-                        $css[ $field_id ] = $css_generator->get_css( $replacement_value, $selectors );
+                        $placeholder = ! empty( $field['placeholder'] ) ? $field['placeholder'] : '';
+                        $css[ $field_id ] = $css_generator->get_css( $replacement_value, $selectors , $placeholder );
                         Auxin_Fonts::get_instance()->parse_typography();
                     } else {
                         $css[ $field_id ] = str_replace( "{{VALUE}}" , $replacement_value, $selectors );

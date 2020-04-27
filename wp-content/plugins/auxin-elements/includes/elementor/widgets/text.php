@@ -1405,7 +1405,7 @@ class Text extends Widget_Base {
                 'default'    => 'center',
                 'toggle'     => true,
                 'selectors'  => array(
-                    '{{WRAPPER}} .aux-widget-advanced-text' => 'text-align: {{VALUE}}',
+                    '{{WRAPPER}} .aux-widget-advanced-text' => 'text-align: {{VALUE}} !important;'
                 )
             )
         );

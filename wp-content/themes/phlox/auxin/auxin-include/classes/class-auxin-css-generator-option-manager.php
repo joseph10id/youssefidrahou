@@ -21,11 +21,18 @@ class Auxin_CSS_Generator_Option_Manager{
      */
     private $selector = '';
 
+    /**
+     * The main CSS selector or placeholder
+     *
+     * @var string
+     */
+    private $placeholder = '';
+
 
     function __construct(){
         $this->generator_instances = [
             'responsive-slider'     => new Auxin_CSS_Generator_Option_Slider(),
-            'responsive-dimensions' => new Auxin_CSS_Generator_Option_Dimensions(),
+            'responsive_dimensions' => new Auxin_CSS_Generator_Option_Dimensions(),
             'slider'                => new Auxin_CSS_Generator_Option_Slider(),
             'dimensions'            => new Auxin_CSS_Generator_Option_Dimensions(),
             'typography'            => new Auxin_CSS_Generator_Option_Typography(),
@@ -67,10 +74,15 @@ class Auxin_CSS_Generator_Option_Manager{
      * @param  string|array  $data  Option data
      * @return string               Final CSS for the option
      */
-    public function get_css( $data, $selector = null ){
+    public function get_css( $data, $selector = null , $placeholder = '' ){
         if( ! empty( $selector ) ){
             $this->selector = $selector;
         }
+
+        if( ! empty( $placeholder ) ){
+            $this->placeholder = $placeholder;
+        }
+        
         // Get parsed json
         $parsed_data = $this->maybe_decode_json( $data, true );
 
@@ -81,7 +93,8 @@ class Auxin_CSS_Generator_Option_Manager{
                 if( in_array( $option_type, [ 'typography', 'typography-hover' ] ) ){
                     $this->generator_instances[ $option_type ]->set_selector( $this->selector );
                 } else {
-                    $this->generator_instances[ $option_type ]->set_placeholder( $this->selector );
+                    $this->generator_instances[ $option_type ]->set_selector( $this->selector );
+                    $this->generator_instances[ $option_type ]->set_placeholder( $this->placeholder );
                 }
 
                 return $this->generator_instances[ $option_type ]->get_css( $parsed_data );

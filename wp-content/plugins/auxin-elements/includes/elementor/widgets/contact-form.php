@@ -1464,7 +1464,7 @@ class ContactForm extends Widget_Base {
                 'label' => __( 'Color', 'auxin-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} textarea:placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} textarea::placeholder' => 'color: {{VALUE}};',
                 ]
             ]
         );

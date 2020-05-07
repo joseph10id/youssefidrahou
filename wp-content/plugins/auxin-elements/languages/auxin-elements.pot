@@ -1,9 +1,9 @@
 # Averta Copyright (c) {2020}
 msgid ""
 msgstr ""
-"Project-Id-Version: Phlox Core Elements 2.5.10\n"
+"Project-Id-Version: Phlox Core Elements 2.5.16\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2020-04-26 12:06:33+00:00\n"
+"POT-Creation-Date: 2020-05-04 16:06:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2654,50 +2654,50 @@ msgstr ""
 msgid "Select Audio"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:394
+#: includes/elementor/class-auxin-elementor-core-elements.php:401
 msgid "Element class \"%s\" not found."
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:490
+#: includes/elementor/class-auxin-elementor-core-elements.php:497
 msgid "Module class \"%s\" not found."
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:563
+#: includes/elementor/class-auxin-elementor-core-elements.php:570
 msgid "%s - General"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:571
+#: includes/elementor/class-auxin-elementor-core-elements.php:578
 msgid "%s - Featured"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:579
+#: includes/elementor/class-auxin-elementor-core-elements.php:586
 msgid "%s - Posts"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:587
+#: includes/elementor/class-auxin-elementor-core-elements.php:594
 msgid "%s - Portfolio"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:666
-#: includes/elementor/class-auxin-elementor-core-elements.php:690
+#: includes/elementor/class-auxin-elementor-core-elements.php:678
+#: includes/elementor/class-auxin-elementor-core-elements.php:702
 #. translators: 1: Plugin name 2: PHP 3: Required PHP version
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:668
+#: includes/elementor/class-auxin-elementor-core-elements.php:680
 msgid "Elementor"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:692
+#: includes/elementor/class-auxin-elementor-core-elements.php:704
 #: includes/elements/code.php:82
 msgid "PHP"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:746
+#: includes/elementor/class-auxin-elementor-core-elements.php:758
 msgid "Phlox Icons - Set 1"
 msgstr ""
 
-#: includes/elementor/class-auxin-elementor-core-elements.php:765
+#: includes/elementor/class-auxin-elementor-core-elements.php:777
 msgid "Phlox Icons - Set 2"
 msgstr ""
 
@@ -7718,6 +7718,30 @@ msgstr ""
 
 #: includes/elementor/widgets/recent-products.php:714
 msgid "WooCommerce"
+msgstr ""
+
+#: includes/elementor/widgets/responsive-table.php:50
+msgid "Responsive Table"
+msgstr ""
+
+#: includes/elementor/widgets/responsive-table.php:102
+msgid "Table Markup"
+msgstr ""
+
+#: includes/elementor/widgets/responsive-table.php:125
+msgid "Table Heading"
+msgstr ""
+
+#: includes/elementor/widgets/responsive-table.php:153
+msgid "Table Body"
+msgstr ""
+
+#: includes/elementor/widgets/responsive-table.php:181
+msgid "Table Odd Rows"
+msgstr ""
+
+#: includes/elementor/widgets/responsive-table.php:200
+msgid "Table Even Rows"
 msgstr ""
 
 #: includes/elementor/widgets/search.php:47

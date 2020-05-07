@@ -1,5 +1,5 @@
 ;(function($, window, document, undefined){
-    const AuxinRemoveCartContent = function() {
+    var AuxinRemoveCartContent = function() {
         // Remove cart content
         $(document).on( 'click', '.aux-remove-cart-content', function(e) {
             e.preventDefault();
@@ -48,7 +48,7 @@
         });
     };
 
-    const AuxinAjaxAddToCart = function() {
+    var AuxinAjaxAddToCart = function() {
         // Add Content to Cart
         $(document).on( 'click', '.aux-ajax-add-to-cart', function(e) {
             var productType  = $(this).data("product-type");
@@ -91,11 +91,11 @@
 
                         setTimeout( function(){
                             if ( hasAnimation ) {
-                                $cartBoxEl.on('AuxCartProgressAnimationDone', function(e) {
+                                // $cartBoxEl.on('AuxCartProgressAnimationDone', function(e) {
                                     $cartBoxEl.find('.aux-card-dropdown').html( response.data.items );
                                     $cartBoxEl.find('.aux-shopping-basket').html( response.data.total );
                                     $cartBoxEl.trigger('AuxCartUpdated');
-                                });
+                                // });
                             } else {
                                 $cartBoxEl.find('.aux-card-dropdown').html( response.data.items );
                                 $cartBoxEl.find('.aux-shopping-basket').html( response.data.total );
@@ -119,4 +119,31 @@
         AuxinRemoveCartContent();
         AuxinAjaxAddToCart();
     });
+
+     $.fn.AuxinCartAnimationHandler = function() {
+        $headerCartWrapper = $(this).find('.aux-cart-wrapper');
+        $headerCartWrapper.trigger('AuxCartProgressAnimationDone');
+
+        if ( ! $headerCartWrapper.hasClass('aux-basket-animation') ) {
+            return
+        }
+
+        $headerCartWrapper.on('AuxCartInProgress', function(e) {
+            $headerCartWrapper.addClass('aux-cart-in-progress');
+        });
+
+        $headerCartWrapper.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function(e) {
+            if ( e.originalEvent.animationName === 'FillBasket') {
+                $headerCartWrapper.removeClass('aux-cart-in-progress');
+                $headerCartWrapper.trigger('AuxCartProgressAnimationDone');
+            }
+        });
+
+        $headerCartWrapper.on('AuxCartUpdated', function(e) {
+            $headerCartWrapper.addClass('aux-cart-updated-animation');
+        });
+    }
+
+    $('body').AuxinCartAnimationHandler();
+
 })(jQuery,window,document);

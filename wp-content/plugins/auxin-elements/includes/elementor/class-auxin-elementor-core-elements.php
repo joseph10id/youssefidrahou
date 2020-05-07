@@ -189,6 +189,9 @@ final class Elements {
 
         // Change options on auxin load
         add_action( 'auxin_admin_loaded'                       , [ $this, 'auxin_admin_loaded' ] );
+
+        // Flush CSS cache on auxin theme or plugin update
+        add_action( 'auxin_updated'                            , [ $this, 'clear_cache' ] );
     }
 
     /**
@@ -367,6 +370,10 @@ final class Elements {
             '250' => [
                 'file'  => $this->dir_path . '/widgets/modern-button.php',
                 'class' => 'Elements\ModernButton'
+            ],
+            '255' => [
+                'file'  => $this->dir_path . '/widgets/responsive-table.php',
+                'class' => 'Elements\ResponsiveTable'
             ]
         ];
 
@@ -610,6 +617,11 @@ final class Elements {
             $css_file = new \Elementor\Core\Files\CSS\Post( $header_template_style );
             $css_file->enqueue();
         }
+
+        if( $footer_template_style = auxin_get_option( 'site_elementor_footer_template' ) ){
+            $css_file = new \Elementor\Core\Files\CSS\Post( $footer_template_style );
+            $css_file->enqueue();
+        }
     }
 
     /**
@@ -773,6 +785,17 @@ final class Elements {
         ];
 
         return $tabs;
+    }
+
+    /**
+	 * Clear cache.
+	 *
+	 * Delete all meta containing files data. And delete the actual
+	 * files from the upload directory.
+	 *
+	 */
+    public function clear_cache(){
+        //\Elementor\Plugin::$instance->files_manager->clear_cache();
     }
 
 }

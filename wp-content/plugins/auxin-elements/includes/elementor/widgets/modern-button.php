@@ -311,7 +311,7 @@ class ModernButton extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'      => 'btn_box_shadow_normal',
-                'selector'  => '{{WRAPPER}} .aux-modern-button'
+                'selector'  => '{{WRAPPER}} .aux-overlay:before, {{WRAPPER}} .aux-overlay:after'
             ]
         );
 
@@ -336,8 +336,8 @@ class ModernButton extends Widget_Base {
                 'allowed_dimensions' => 'all',
                 'separator'          => 'before',
                 'selectors'          => [
-                    '{{WRAPPER}} .aux-modern-button' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
-                ],
+                    '{{WRAPPER}} .aux-overlay:before, {{WRAPPER}} .aux-overlay:after' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
             ]
         );
 
@@ -364,7 +364,7 @@ class ModernButton extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'      => 'btn_box_shadow_hover',
-                'selector'  => '{{WRAPPER}} .aux-modern-button:hover'
+                'selector'  => '{{WRAPPER}} .aux-modern-button:hover .aux-overlay:before, {{WRAPPER}} .aux-modern-button:hover .aux-overlay:after'
             ]
         );
 
@@ -389,8 +389,8 @@ class ModernButton extends Widget_Base {
                 'allowed_dimensions' => 'all',
                 'separator'          => 'before',
                 'selectors'          => [
-                    '{{WRAPPER}} .aux-modern-button:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
-                ],
+                    '{{WRAPPER}} .aux-modern-button:hover .aux-overlay:before, {{WRAPPER}} .aux-modern-button:hover .aux-overlay:after' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                ]
             ]
         );
 
@@ -759,9 +759,9 @@ class ModernButton extends Widget_Base {
 
     ?>
     <div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?> >
-        <?php 
-        if ( auxin_is_true( $settings['open_video_in_lightbox'] ) ) { 
-            
+        <?php
+        if ( auxin_is_true( $settings['open_video_in_lightbox'] ) ) {
+
             $this->add_render_attribute( 'button', 'class', 'aux-open-video' );
             $this->add_render_attribute( 'button', 'data-type', 'video' );
 
@@ -777,8 +777,8 @@ class ModernButton extends Widget_Base {
                 <?php };?>
                 <div class="aux-text"><?php echo esc_html( $settings['label'] ); ?></div>
             </a>
-            <?php 
-        if ( auxin_is_true( $settings['open_video_in_lightbox'] ) ) { 
+            <?php
+        if ( auxin_is_true( $settings['open_video_in_lightbox'] ) ) {
             echo '</span>';
         }
         ?>

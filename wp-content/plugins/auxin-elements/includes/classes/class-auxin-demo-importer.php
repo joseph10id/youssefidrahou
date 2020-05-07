@@ -1785,30 +1785,24 @@ class Auxin_Demo_Importer {
         }
 
         // Change structure of urls included in custom css
+        $site_url = str_replace( '/', '\/', trailingslashit( get_site_url() ) );
         preg_match_all( '/"custom_css":".+?(?<!\\ )"/', $meta, $custom_css, PREG_SET_ORDER );
         if ( ! empty( $custom_css ) ) {
             foreach ( $custom_css as $key => $css ) {
-                $new_css = preg_replace( "#[\\\/|\w|:]*\\\/wp-content#", '\/wp-content', $css[0] );
-                $new_css = preg_replace( "#sites\\\/\d*\\\/#", '', $new_css );
-                $meta = str_replace( $css[0], $new_css, $meta );
+                preg_match_all( '/[\w\\\/\-\.\:]+?([\w\-]+?)\\\/wp-content/', $css[0], $matches, PREG_SET_ORDER );
+                if ( ! empty( $matches ) ) {
+                    $new_css = $css[0];
+                    foreach( $matches[0] as $key => $url ) {
+                        $new_url = str_replace( '\/' . $matches[1][$key], '', $url );
+                        $new_url = str_replace( "https:\/\/demo.phlox.pro\/", $site_url, $new_url );
+                        $new_css = str_replace( $url, $new_url, $new_css );
+                    }
+                    $new_css = preg_replace( "#sites\\\/\d*\\\/#", '', $new_css );
+                    $meta = str_replace( $css[0], $new_css, $meta );    
+                }
             }
         }
 
-        // Change absolute and relative urls to Site Url
-        $site_url = str_replace( '/', '\/', trailingslashit( get_site_url() ) );
-        preg_match_all( '#https:\\\\\/\\\\\/demo\.phlox\.pro\\\\.+?(?=(wp-content|\/))#', $meta, $phlox_urls, PREG_SET_ORDER );
-        if ( ! empty( $phlox_urls ) ) {
-            foreach( $phlox_urls as $key => $url ){
-                $meta = str_replace( $url[0], $site_url, $meta);
-            }
-        }
-
-        preg_match_all( '#\\"url\\":\\"\\\\\/.[a-z,0-9]*\\\\\/#', $meta, $relative_urls, PREG_SET_ORDER );
-        if ( ! empty( $relative_urls ) ) {
-            foreach($relative_urls as $key => $url) {
-                $meta = str_replace( $url[0], '"url":"'.$site_url, $meta );
-            }
-        }
         return $meta;
     }
 

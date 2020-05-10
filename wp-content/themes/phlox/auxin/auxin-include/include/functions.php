@@ -523,7 +523,7 @@ function auxin_get_page_sidebar_pos( $page_id ){
         }
 
     } elseif( is_search() ){
-        $layout = 'right-sidebar';
+        $layout = is_active_sidebar( 'auxin-search-sidebar-widget-area' ) ? 'right-sidebar' : 'no-sidebar';
 
     } elseif( $post && ! $layout = get_post_meta( $post->ID, 'page_layout', true ) ){
         $layout = 'no-sidebar';
@@ -2656,6 +2656,9 @@ function auxin_filter_output( $args, $type, $align, $classname = null, $sort_arg
         }
 
         foreach ( $terms as $term ) {
+            if ( strpos( $term->slug, '%' ) ) {
+                $term->slug = str_replace( '%', '-', $term->slug );
+            }
             $lists_output .='<li data-filter="'.$term->slug.'" data-category-id="'.$term->term_id.'" ><a href="#"><span data-select="'.$term->name.'">'.$term->name.'</span></a></li>';
         }
 

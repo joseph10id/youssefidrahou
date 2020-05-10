@@ -24,15 +24,6 @@ function auxin_after_setup_theme(){
         foreach ( $theme_support_features as $the_theme_support ) {
             if( $the_theme_support ){
 
-                /*  Add Post Thumbnails
-                /*----------------------------*/
-                if( 'post-thumbnails' == $the_theme_support ){
-                    $post_types = apply_filters( "auxin_post_thumbnails" , auxin_get_possible_post_types(true) );
-                    $post_types = array_merge( array_keys( $post_types ), array('post', 'page') );
-                    add_theme_support( 'post-thumbnails' , $post_types );
-                    continue;
-                }
-
                 /*  Add Post Formats
                 /*----------------------------*/
                 if( 'post-formats' == $the_theme_support ){

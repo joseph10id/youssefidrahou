@@ -1,4 +1,4 @@
-/*! Auxin WordPress Framework - v2.5.9 (2020-04-26)
+/*! Auxin WordPress Framework - v2.5.13 (2020-05-04)
  *  Scripts for initializing plugins 
  *  http://averta.net
  *  (c) 2014-2020 averta;
@@ -1280,8 +1280,8 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
 
                 transitionTarget.removeEventListener( 'transitionend', pageShowAnimationDone );
 
-                // Appear the Entrance Animations After Page Animation
-                $.fn.AuxinAppearAnimationsInit( $body );
+                var pageAnimationDoneEvent = new CustomEvent( 'AuxPageAnimationDone' ); 
+                document.body.dispatchEvent(pageAnimationDoneEvent);
             }
         }
     }
@@ -1406,22 +1406,33 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
     // InView Animation
     $.fn.AuxinAppearAnimationsInit = function( $scope ){
         $scope = $scope || $(this);
-        
-        var $target = $scope.hasClass('aux-appear-watch-animation') ? $scope : $scope.find('.aux-appear-watch-animation');
+
+        var $target      = $scope.hasClass('aux-appear-watch-animation') ? $scope: $scope.find('.aux-appear-watch-animation'),
+            hasAnimation = $('body').hasClass('aux-page-animation');
 
         if( ! $target.length ){
             return;
+        }   
+
+        if ( hasAnimation ) {
+            document.body.addEventListener( 'AuxPageAnimationDone', function(event) { 
+                $target.appearl({
+                    offset: '200px',
+                    insetOffset:'0px'
+                }).one( 'appear', function(event, data) {
+                    this.classList.add('aux-animated');
+                    this.classList.add('aux-animated-once');
+                });
+            });
+        } else {
+            $target.appearl({
+                offset: '200px',
+                insetOffset:'0px'
+            }).one( 'appear', function(event, data) {
+                this.classList.add('aux-animated');
+                this.classList.add('aux-animated-once');
+            });
         }
-
-        // InView Animations
-        $target.appearl({
-            offset: '200px',
-            insetOffset:'0px'
-        }).one( 'appear', function(event, data) {
-            this.classList.add('aux-animated');
-            this.classList.add('aux-animated-once');
-        });
-
     };
 
 })(jQuery, window, document);

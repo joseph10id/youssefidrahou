@@ -250,296 +250,6 @@ function auxin_define_options_info( $fields_sections_list ){
     );
 
 
-    // Sub section - Website socials ----------------------------------
-
-    $sections[] = array(
-        'id'          => 'general-section-main-socials',
-        'parent'      => 'general-section', // section parent's id
-        'title'       => __( 'Website Socials', 'phlox' ),
-        'description' => __( 'Website Socials', 'phlox' )
-    );
-
-    $options[] = array(
-        'title'       => __( 'Hide Socials on Tablet', 'phlox' ),
-        'description' => __( 'Enable it to hide subfooter on tablet devices.', 'phlox' ),
-        'id'          => 'socials_hide_on_tablet',
-        'section'     => 'general-section-main-socials',
-        'default'     => '1',
-        'transport'   => 'postMessage',
-        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-tablet-off", to );',
-        'type'        => 'switch'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Hide Socials on Phone', 'phlox' ),
-        'description' => __( 'Enable it to hide subfooter on phone devices.', 'phlox' ),
-        'id'          => 'socials_hide_on_phone',
-        'section'     => 'general-section-main-socials',
-        'default'     => '1',
-        'transport'   => 'postMessage',
-        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-phone-off", to );',
-        'type'        => 'switch'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Use Brand Color', 'phlox' ),
-        'description' => __( 'Enable this option to apply brand color to each social icons.', 'phlox' ),
-        'id'          => 'socials_brand_color',
-        'section'     => 'general-section-main-socials',
-        'default'     => '0',
-        'type'        => 'switch',
-        'transport'   => 'postMessage',
-        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-brand-color", 1 == to );',
-    );
-
-    $options[] = array(
-        'title'       => __( 'Use Brand Color as Hover', 'phlox' ),
-        'description' => __( 'You can sepcify with enable this option to use brand color for each social icons just on hover', 'phlox' ),
-        'id'          => 'socials_brand_color_hover',
-        'section'     => 'general-section-main-socials',
-        'default'     => '0',
-        'type'        => 'switch',
-        'transport'   => 'refresh',
-        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-brand-color", 1 == to );',
-    );
-
-    $options[] = array(
-        'title'       => __( 'Icon Color', 'phlox' ),
-        'id'          => 'socials_brand_color_custom',
-        'description' => __( 'Specifies the color of social icons.', 'phlox' ),
-        'section'     => 'general-section-main-socials',
-        'type'        => 'color',
-        'dependency'  => array(
-            array(
-                'id'      => 'socials_brand_color',
-                'value'   => array('0'),
-                'operator'=> '=='
-            )
-        ),
-        'style_callback' => function( $value = null ){
-            if( ! $value ){
-                $value = esc_attr( auxin_get_option( 'socials_brand_color_custom' ) );
-            }
-            return empty( $value ) ? '' : ".aux-top-header .aux-social-list a { color:$value; }";
-        },
-        'transport' => 'postMessage',
-        'default'   => ''
-    );
-
-    $options[] = array(
-        'title'       => __( 'Facebook', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'facebook',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'starter'     => '#',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Twitter', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'twitter',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'starter'     => '#',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Google +', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'googleplus',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Dribbble', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'dribbble',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'YouTube', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'youtube',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Vimeo', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'vimeo',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Flickr', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'flickr',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Digg', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'digg',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Stumbleupon', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'stumbleupon',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'LastFM', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'lastfm',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Delicious', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'delicious',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Skype', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'skype',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'starter'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'LinkedIn', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'linkedin',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Tumblr', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'tumblr',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Pinterest', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'pinterest',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Instagram', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'instagram',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'starter'     => '#',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'VK', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'vk',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'Telegram', 'phlox' ),
-        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
-        'id'          => 'telegram',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-    $options[] = array(
-        'title'       => __( 'RSS', 'phlox' ),
-        'description' => __( 'Enter your RSS Feed page. For example :', 'phlox' ).' <code>'.esc_url( home_url('?feed=rss2') ).'</code>',
-        'id'          => 'rss',
-        'section'     => 'general-section-main-socials',
-        'transport'   => 'refresh',
-        'dependency'  => array(),
-        'default'     => '',
-        'type'        => 'text'
-    );
-
-
      // Sub section - Paeg animation and preloading layout -------------------------------
 
     $sections[] = array(
@@ -4290,6 +4000,285 @@ function auxin_define_options_info( $fields_sections_list ){
                 'operator'=> '='
             ),
         ),
+    );
+
+    // Sub section - Website socials ----------------------------------
+
+    $sections[] = array(
+        'id'          => 'header-section-main-socials',
+        'parent'      => 'header-section', // section parent's id
+        'title'       => __( 'Website Socials', 'phlox' ),
+        'description' => __( 'Website Socials', 'phlox' ),
+        'is_deprecated' => true
+    );
+
+    $options[] = array(
+        'title'       => __( 'Hide Socials on Tablet', 'phlox' ),
+        'description' => __( 'Enable it to hide subfooter on tablet devices.', 'phlox' ),
+        'id'          => 'socials_hide_on_tablet',
+        'section'     => 'header-section-main-socials',
+        'default'     => '1',
+        'transport'   => 'postMessage',
+        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-tablet-off", to );',
+        'type'        => 'switch'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Hide Socials on Phone', 'phlox' ),
+        'description' => __( 'Enable it to hide subfooter on phone devices.', 'phlox' ),
+        'id'          => 'socials_hide_on_phone',
+        'section'     => 'header-section-main-socials',
+        'default'     => '1',
+        'transport'   => 'postMessage',
+        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-phone-off", to );',
+        'type'        => 'switch'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Use Brand Color', 'phlox' ),
+        'description' => __( 'Enable this option to apply brand color to each social icons.', 'phlox' ),
+        'id'          => 'socials_brand_color',
+        'section'     => 'header-section-main-socials',
+        'default'     => '0',
+        'type'        => 'switch',
+        'transport'   => 'postMessage',
+        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-brand-color", 1 == to );',
+    );
+
+    $options[] = array(
+        'title'       => __( 'Use Brand Color as Hover', 'phlox' ),
+        'description' => __( 'You can sepcify with enable this option to use brand color for each social icons just on hover', 'phlox' ),
+        'id'          => 'socials_brand_color_hover',
+        'section'     => 'header-section-main-socials',
+        'default'     => '0',
+        'type'        => 'switch',
+        'transport'   => 'refresh',
+        'post_js'     => '$(".aux-socials-header").toggleClass( "aux-brand-color", 1 == to );',
+    );
+
+    $options[] = array(
+        'title'       => __( 'Icon Color', 'phlox' ),
+        'id'          => 'socials_brand_color_custom',
+        'description' => __( 'Specifies the color of social icons.', 'phlox' ),
+        'section'     => 'header-section-main-socials',
+        'type'        => 'color',
+        'dependency'  => array(
+            array(
+                'id'      => 'socials_brand_color',
+                'value'   => array('0'),
+                'operator'=> '=='
+            )
+        ),
+        'style_callback' => function( $value = null ){
+            if( ! $value ){
+                $value = esc_attr( auxin_get_option( 'socials_brand_color_custom' ) );
+            }
+            return empty( $value ) ? '' : ".aux-top-header .aux-social-list a { color:$value; }";
+        },
+        'transport' => 'postMessage',
+        'default'   => ''
+    );
+
+    $options[] = array(
+        'title'       => __( 'Facebook', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'facebook',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'starter'     => '#',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Twitter', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'twitter',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'starter'     => '#',
+        'type'        => 'text'
+    );
+    
+    $options[] = array(
+        'title'       => __( 'Dribbble', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'dribbble',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'YouTube', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'youtube',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Vimeo', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'vimeo',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Flickr', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'flickr',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Digg', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'digg',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Stumbleupon', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'stumbleupon',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'LastFM', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'lastfm',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Delicious', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'delicious',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Skype', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'skype',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'starter'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'LinkedIn', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'linkedin',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Tumblr', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'tumblr',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Pinterest', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'pinterest',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Instagram', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'instagram',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'starter'     => '#',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'VK', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'vk',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'Telegram', 'phlox' ),
+        'description' => __( 'Should start with <code>http://</code>', 'phlox' ),
+        'id'          => 'telegram',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
+    );
+
+    $options[] = array(
+        'title'       => __( 'RSS', 'phlox' ),
+        'description' => __( 'Enter your RSS Feed page. For example :', 'phlox' ).' <code>'.esc_url( home_url('?feed=rss2') ).'</code>',
+        'id'          => 'rss',
+        'section'     => 'header-section-main-socials',
+        'transport'   => 'refresh',
+        'dependency'  => array(),
+        'default'     => '',
+        'type'        => 'text'
     );
 
     /* ---------------------------------------------------------------------------------------------------

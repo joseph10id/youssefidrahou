@@ -387,8 +387,7 @@ body, select, input, textarea {
 /* links ------------- */
 a {
   text-decoration: none;
-  -webkit-transition: background-color 150ms linear, color 150ms linear;
-          transition: background-color 150ms linear, color 150ms linear;
+  transition: background-color 150ms linear, color 150ms linear;
   border: none;
   padding: 0;
   margin: 0; }
@@ -407,6 +406,9 @@ a {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
+::-moz-selection {
+  background: #ffb7b7;
+  text-shadow: none; }
 
 ::selection {
   background: #ffb7b7;
@@ -623,6 +625,7 @@ blockquote {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
+    -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     z-index: 3; }
@@ -631,6 +634,7 @@ blockquote {
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       -khtml-user-select: none;
+      -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
   blockquote p {
@@ -771,30 +775,22 @@ figcaption {
 .aux-float-layout .aux-center {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  transform: translateX(-50%); }
 .aux-float-layout .aux-middle {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  transform: translateY(-50%); }
 .aux-float-layout .aux-center-middle {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%); }
 .aux-float-layout .aux-fill {
   height: 100%; }
 .aux-float-layout .aux-bottom {
   position: relative;
   top: 100%;
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%); }
+  transform: translateY(-100%); }
 .rtl .aux-float-layout .aux-start {
   float: right; }
 .rtl .aux-float-layout .aux-end {
@@ -807,30 +803,22 @@ figcaption {
   .aux-float-layout .aux-phone-center {
     position: absolute;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); }
+    transform: translateX(-50%); }
   .aux-float-layout .aux-phone-middle {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    transform: translateY(-50%); }
   .aux-float-layout .aux-phone-center-middle {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%); }
   .aux-float-layout .aux-phone-fill {
     height: 100%; }
   .aux-float-layout .aux-phone-bottom {
     position: relative;
     top: 100%;
-    -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-            transform: translateY(-100%); }
+    transform: translateY(-100%); }
   .rtl .aux-float-layout .aux-phone-start {
     float: right; }
   .rtl .aux-float-layout .aux-phone-end {
@@ -843,30 +831,22 @@ figcaption {
   .aux-float-layout .aux-tablet-center {
     position: absolute;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); }
+    transform: translateX(-50%); }
   .aux-float-layout .aux-tablet-middle {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    transform: translateY(-50%); }
   .aux-float-layout .aux-tablet-center-middle {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%); }
   .aux-float-layout .aux-tablet-fill {
     height: 100%; }
   .aux-float-layout .aux-tablet-bottom {
     position: relative;
     top: 100%;
-    -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-            transform: translateY(-100%); }
+    transform: translateY(-100%); }
   .rtl .aux-float-layout .aux-tablet-start {
     float: right; }
   .rtl .aux-float-layout .aux-tablet-end {
@@ -951,6 +931,8 @@ ol {
       padding: 0 0.5em;
       line-height: 1em;
       font-size: 0.85em;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
       border-radius: 3px; }
 
 /**
@@ -1531,9 +1513,7 @@ input.aux-black[type="button"].aux-3d,
   input.aux-black[type="button"].aux-3d:hover,
   .aux-black.aux-button.aux-3d:hover {
     box-shadow: 0 3px #242424;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-white.button.aux-3d, button.aux-white.aux-3d,
 input.aux-white[type="button"].aux-3d,
 .aux-white.aux-button.aux-3d {
@@ -1542,9 +1522,7 @@ input.aux-white[type="button"].aux-3d,
   input.aux-white[type="button"].aux-3d:hover,
   .aux-white.aux-button.aux-3d:hover {
     box-shadow: 0 3px #e6e6e6;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-masala.button.aux-3d, button.aux-masala.aux-3d,
 input.aux-masala[type="button"].aux-3d,
 .aux-masala.aux-button.aux-3d {
@@ -1553,9 +1531,7 @@ input.aux-masala[type="button"].aux-3d,
   input.aux-masala[type="button"].aux-3d:hover,
   .aux-masala.aux-button.aux-3d:hover {
     box-shadow: 0 3px #242424;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-dark-gray.button.aux-3d, button.aux-dark-gray.aux-3d,
 input.aux-dark-gray[type="button"].aux-3d,
 .aux-dark-gray.aux-button.aux-3d {
@@ -1564,9 +1540,7 @@ input.aux-dark-gray[type="button"].aux-3d,
   input.aux-dark-gray[type="button"].aux-3d:hover,
   .aux-dark-gray.aux-button.aux-3d:hover {
     box-shadow: 0 3px #919191;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-ball-blue.button.aux-3d, button.aux-ball-blue.aux-3d,
 input.aux-ball-blue[type="button"].aux-3d,
 .aux-ball-blue.aux-button.aux-3d {
@@ -1575,9 +1549,7 @@ input.aux-ball-blue[type="button"].aux-3d,
   input.aux-ball-blue[type="button"].aux-3d:hover,
   .aux-ball-blue.aux-button.aux-3d:hover {
     box-shadow: 0 3px #1589a1;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-fountain-blue.button.aux-3d, button.aux-fountain-blue.aux-3d,
 input.aux-fountain-blue[type="button"].aux-3d,
 .aux-fountain-blue.aux-button.aux-3d {
@@ -1586,9 +1558,7 @@ input.aux-fountain-blue[type="button"].aux-3d,
   input.aux-fountain-blue[type="button"].aux-3d:hover,
   .aux-fountain-blue.aux-button.aux-3d:hover {
     box-shadow: 0 3px #43919f;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-shamrock.button.aux-3d, button.aux-shamrock.aux-3d,
 input.aux-shamrock[type="button"].aux-3d,
 .aux-shamrock.aux-button.aux-3d {
@@ -1597,9 +1567,7 @@ input.aux-shamrock[type="button"].aux-3d,
   input.aux-shamrock[type="button"].aux-3d:hover,
   .aux-shamrock.aux-button.aux-3d:hover {
     box-shadow: 0 3px #239f72;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-curios-blue.button.aux-3d, button.aux-curios-blue.aux-3d,
 input.aux-curios-blue[type="button"].aux-3d,
 .aux-curios-blue.aux-button.aux-3d {
@@ -1608,9 +1576,7 @@ input.aux-curios-blue[type="button"].aux-3d,
   input.aux-curios-blue[type="button"].aux-3d:hover,
   .aux-curios-blue.aux-button.aux-3d:hover {
     box-shadow: 0 3px #23679f;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-light-sea-green.button.aux-3d, button.aux-light-sea-green.aux-3d,
 input.aux-light-sea-green[type="button"].aux-3d,
 .aux-light-sea-green.aux-button.aux-3d {
@@ -1619,9 +1585,7 @@ input.aux-light-sea-green[type="button"].aux-3d,
   input.aux-light-sea-green[type="button"].aux-3d:hover,
   .aux-light-sea-green.aux-button.aux-3d:hover {
     box-shadow: 0 3px #148f77;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-emerald.button.aux-3d, button.aux-emerald.aux-3d,
 input.aux-emerald[type="button"].aux-3d,
 .aux-emerald.aux-button.aux-3d {
@@ -1630,9 +1594,7 @@ input.aux-emerald[type="button"].aux-3d,
   input.aux-emerald[type="button"].aux-3d:hover,
   .aux-emerald.aux-button.aux-3d:hover {
     box-shadow: 0 3px #3c9958;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-energy-yellow.button.aux-3d, button.aux-energy-yellow.aux-3d,
 input.aux-energy-yellow[type="button"].aux-3d,
 .aux-energy-yellow.aux-button.aux-3d {
@@ -1641,9 +1603,7 @@ input.aux-energy-yellow[type="button"].aux-3d,
   input.aux-energy-yellow[type="button"].aux-3d:hover,
   .aux-energy-yellow.aux-button.aux-3d:hover {
     box-shadow: 0 3px #e9df29;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-mikado-yellow.button.aux-3d, button.aux-mikado-yellow.aux-3d,
 input.aux-mikado-yellow[type="button"].aux-3d,
 .aux-mikado-yellow.aux-button.aux-3d {
@@ -1652,9 +1612,7 @@ input.aux-mikado-yellow[type="button"].aux-3d,
   input.aux-mikado-yellow[type="button"].aux-3d:hover,
   .aux-mikado-yellow.aux-button.aux-3d:hover {
     box-shadow: 0 3px #d5ac03;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-pink-salmon.button.aux-3d, button.aux-pink-salmon.aux-3d,
 input.aux-pink-salmon[type="button"].aux-3d,
 .aux-pink-salmon.aux-button.aux-3d {
@@ -1663,9 +1621,7 @@ input.aux-pink-salmon[type="button"].aux-3d,
   input.aux-pink-salmon[type="button"].aux-3d:hover,
   .aux-pink-salmon.aux-button.aux-3d:hover {
     box-shadow: 0 3px #ff5e81;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-wisteria.button.aux-3d, button.aux-wisteria.aux-3d,
 input.aux-wisteria[type="button"].aux-3d,
 .aux-wisteria.aux-button.aux-3d {
@@ -1674,9 +1630,7 @@ input.aux-wisteria[type="button"].aux-3d,
   input.aux-wisteria[type="button"].aux-3d:hover,
   .aux-wisteria.aux-button.aux-3d:hover {
     box-shadow: 0 3px #845095;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-lilac.button.aux-3d, button.aux-lilac.aux-3d,
 input.aux-lilac[type="button"].aux-3d,
 .aux-lilac.aux-button.aux-3d {
@@ -1685,9 +1639,7 @@ input.aux-lilac[type="button"].aux-3d,
   input.aux-lilac[type="button"].aux-3d:hover,
   .aux-lilac.aux-button.aux-3d:hover {
     box-shadow: 0 3px #ba8bc0;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-pale-sky.button.aux-3d, button.aux-pale-sky.aux-3d,
 input.aux-pale-sky[type="button"].aux-3d,
 .aux-pale-sky.aux-button.aux-3d {
@@ -1696,9 +1648,7 @@ input.aux-pale-sky[type="button"].aux-3d,
   input.aux-pale-sky[type="button"].aux-3d:hover,
   .aux-pale-sky.aux-button.aux-3d:hover {
     box-shadow: 0 3px #4a5a69;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-tower-gray.button.aux-3d, button.aux-tower-gray.aux-3d,
 input.aux-tower-gray[type="button"].aux-3d,
 .aux-tower-gray.aux-button.aux-3d {
@@ -1707,9 +1657,7 @@ input.aux-tower-gray[type="button"].aux-3d,
   input.aux-tower-gray[type="button"].aux-3d:hover,
   .aux-tower-gray.aux-button.aux-3d:hover {
     box-shadow: 0 3px #90a4ad;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-william.button.aux-3d, button.aux-william.aux-3d,
 input.aux-william[type="button"].aux-3d,
 .aux-william.aux-button.aux-3d {
@@ -1718,9 +1666,7 @@ input.aux-william[type="button"].aux-3d,
   input.aux-william[type="button"].aux-3d:hover,
   .aux-william.aux-button.aux-3d:hover {
     box-shadow: 0 3px #28424e;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-carmine-pink.button.aux-3d, button.aux-carmine-pink.aux-3d,
 input.aux-carmine-pink[type="button"].aux-3d,
 .aux-carmine-pink.aux-button.aux-3d {
@@ -1729,9 +1675,7 @@ input.aux-carmine-pink[type="button"].aux-3d,
   input.aux-carmine-pink[type="button"].aux-3d:hover,
   .aux-carmine-pink.aux-button.aux-3d:hover {
     box-shadow: 0 3px #d62c1a;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-persimmon.button.aux-3d, button.aux-persimmon.aux-3d,
 input.aux-persimmon[type="button"].aux-3d,
 .aux-persimmon.aux-button.aux-3d {
@@ -1740,9 +1684,7 @@ input.aux-persimmon[type="button"].aux-3d,
   input.aux-persimmon[type="button"].aux-3d:hover,
   .aux-persimmon.aux-button.aux-3d:hover {
     box-shadow: 0 3px #ff3d22;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-tan-hide.button.aux-3d, button.aux-tan-hide.aux-3d,
 input.aux-tan-hide[type="button"].aux-3d,
 .aux-tan-hide.aux-button.aux-3d {
@@ -1751,9 +1693,7 @@ input.aux-tan-hide[type="button"].aux-3d,
   input.aux-tan-hide[type="button"].aux-3d:hover,
   .aux-tan-hide.aux-button.aux-3d:hover {
     box-shadow: 0 3px #ff8222;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-wild-watermelon.button.aux-3d, button.aux-wild-watermelon.aux-3d,
 input.aux-wild-watermelon[type="button"].aux-3d,
 .aux-wild-watermelon.aux-button.aux-3d {
@@ -1762,9 +1702,7 @@ input.aux-wild-watermelon[type="button"].aux-3d,
   input.aux-wild-watermelon[type="button"].aux-3d:hover,
   .aux-wild-watermelon.aux-button.aux-3d:hover {
     box-shadow: 0 3px #ff3b49;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-iceberg.button.aux-3d, button.aux-iceberg.aux-3d,
 input.aux-iceberg[type="button"].aux-3d,
 .aux-iceberg.aux-button.aux-3d {
@@ -1773,9 +1711,7 @@ input.aux-iceberg[type="button"].aux-3d,
   input.aux-iceberg[type="button"].aux-3d:hover,
   .aux-iceberg.aux-button.aux-3d:hover {
     box-shadow: 0 3px #4c9bca;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-dark-lavender.button.aux-3d, button.aux-dark-lavender.aux-3d,
 input.aux-dark-lavender[type="button"].aux-3d,
 .aux-dark-lavender.aux-button.aux-3d {
@@ -1784,9 +1720,7 @@ input.aux-dark-lavender[type="button"].aux-3d,
   input.aux-dark-lavender[type="button"].aux-3d:hover,
   .aux-dark-lavender.aux-button.aux-3d:hover {
     box-shadow: 0 3px #5b4671;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-viking.button.aux-3d, button.aux-viking.aux-3d,
 input.aux-viking[type="button"].aux-3d,
 .aux-viking.aux-button.aux-3d {
@@ -1795,9 +1729,7 @@ input.aux-viking[type="button"].aux-3d,
   input.aux-viking[type="button"].aux-3d:hover,
   .aux-viking.aux-button.aux-3d:hover {
     box-shadow: 0 3px #30cadf;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-tiffany-blue.button.aux-3d, button.aux-tiffany-blue.aux-3d,
 input.aux-tiffany-blue[type="button"].aux-3d,
 .aux-tiffany-blue.aux-button.aux-3d {
@@ -1806,9 +1738,7 @@ input.aux-tiffany-blue[type="button"].aux-3d,
   input.aux-tiffany-blue[type="button"].aux-3d:hover,
   .aux-tiffany-blue.aux-button.aux-3d:hover {
     box-shadow: 0 3px #008282;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-pastel-orange.button.aux-3d, button.aux-pastel-orange.aux-3d,
 input.aux-pastel-orange[type="button"].aux-3d,
 .aux-pastel-orange.aux-button.aux-3d {
@@ -1817,9 +1747,7 @@ input.aux-pastel-orange[type="button"].aux-3d,
   input.aux-pastel-orange[type="button"].aux-3d:hover,
   .aux-pastel-orange.aux-button.aux-3d:hover {
     box-shadow: 0 3px #fba70f;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-east-bay.button.aux-3d, button.aux-east-bay.aux-3d,
 input.aux-east-bay[type="button"].aux-3d,
 .aux-east-bay.aux-button.aux-3d {
@@ -1828,9 +1756,7 @@ input.aux-east-bay[type="button"].aux-3d,
   input.aux-east-bay[type="button"].aux-3d:hover,
   .aux-east-bay.aux-button.aux-3d:hover {
     box-shadow: 0 3px #293f5e;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-steel-blue.button.aux-3d, button.aux-steel-blue.aux-3d,
 input.aux-steel-blue[type="button"].aux-3d,
 .aux-steel-blue.aux-button.aux-3d {
@@ -1839,9 +1765,7 @@ input.aux-steel-blue[type="button"].aux-3d,
   input.aux-steel-blue[type="button"].aux-3d:hover,
   .aux-steel-blue.aux-button.aux-3d:hover {
     box-shadow: 0 3px #376c8b;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-half-backed.button.aux-3d, button.aux-half-backed.aux-3d,
 input.aux-half-backed[type="button"].aux-3d,
 .aux-half-backed.aux-button.aux-3d {
@@ -1850,9 +1774,7 @@ input.aux-half-backed[type="button"].aux-3d,
   input.aux-half-backed[type="button"].aux-3d:hover,
   .aux-half-backed.aux-button.aux-3d:hover {
     box-shadow: 0 3px #5fbdc3;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-tapestry.button.aux-3d, button.aux-tapestry.aux-3d,
 input.aux-tapestry[type="button"].aux-3d,
 .aux-tapestry.aux-button.aux-3d {
@@ -1861,9 +1783,7 @@ input.aux-tapestry[type="button"].aux-3d,
   input.aux-tapestry[type="button"].aux-3d:hover,
   .aux-tapestry.aux-button.aux-3d:hover {
     box-shadow: 0 3px #9d436b;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-fire-engine-red.button.aux-3d, button.aux-fire-engine-red.aux-3d,
 input.aux-fire-engine-red[type="button"].aux-3d,
 .aux-fire-engine-red.aux-button.aux-3d {
@@ -1872,9 +1792,7 @@ input.aux-fire-engine-red[type="button"].aux-3d,
   input.aux-fire-engine-red[type="button"].aux-3d:hover,
   .aux-fire-engine-red.aux-button.aux-3d:hover {
     box-shadow: 0 3px #a2231c;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-dark-orange.button.aux-3d, button.aux-dark-orange.aux-3d,
 input.aux-dark-orange[type="button"].aux-3d,
 .aux-dark-orange.aux-button.aux-3d {
@@ -1883,9 +1801,7 @@ input.aux-dark-orange[type="button"].aux-3d,
   input.aux-dark-orange[type="button"].aux-3d:hover,
   .aux-dark-orange.aux-button.aux-3d:hover {
     box-shadow: 0 3px #cc7000;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-brick-red.button.aux-3d, button.aux-brick-red.aux-3d,
 input.aux-brick-red[type="button"].aux-3d,
 .aux-brick-red.aux-button.aux-3d {
@@ -1894,9 +1810,7 @@ input.aux-brick-red[type="button"].aux-3d,
   input.aux-brick-red[type="button"].aux-3d:hover,
   .aux-brick-red.aux-button.aux-3d:hover {
     box-shadow: 0 3px #ae2f3c;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.aux-khaki.button.aux-3d, button.aux-khaki.aux-3d,
 input.aux-khaki[type="button"].aux-3d,
 .aux-khaki.aux-button.aux-3d {
@@ -1905,16 +1819,12 @@ input.aux-khaki[type="button"].aux-3d,
   input.aux-khaki[type="button"].aux-3d:hover,
   .aux-khaki.aux-button.aux-3d:hover {
     box-shadow: 0 3px #eadc5f;
-    -webkit-transform: translateY(3px);
-        -ms-transform: translateY(3px);
-            transform: translateY(3px); }
+    transform: translateY(3px); }
 a.button.aux-3d:active, button.aux-3d:active,
 input[type="button"].aux-3d:active,
 .aux-button.aux-3d:active {
   box-shadow: none;
-  -webkit-transform: translateY(6px);
-      -ms-transform: translateY(6px);
-          transform: translateY(6px); }
+  transform: translateY(6px); }
 
 a.button, button,
 input[type="button"],
@@ -1928,8 +1838,7 @@ input[type="button"],
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
-  -webkit-transition: all 450ms;
-          transition: all 450ms; }
+  transition: all 450ms; }
   a.button:focus, button:focus,
   input[type="button"]:focus,
   .aux-button:focus {
@@ -1945,11 +1854,8 @@ input[type="button"],
     width: 120%;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0, 0);
-        -ms-transform: translate(-50%, -50%) scale(0, 0);
-            transform: translate(-50%, -50%) scale(0, 0);
-    -webkit-transition: -webkit-transform 450ms cubic-bezier(0.75, 0.1, 0.25, 0.9);
-            transition: transform 450ms cubic-bezier(0.75, 0.1, 0.25, 0.9); }
+    transform: translate(-50%, -50%) scale(0, 0);
+    transition: transform 450ms cubic-bezier(0.75, 0.1, 0.25, 0.9); }
     a.button .aux-overlay::after, button .aux-overlay::after,
     input[type="button"] .aux-overlay::after,
     .aux-button .aux-overlay::after {
@@ -1965,14 +1871,11 @@ input[type="button"],
   a.button:hover .aux-overlay, button:hover .aux-overlay,
   input[type="button"]:hover .aux-overlay,
   .aux-button:hover .aux-overlay {
-    -webkit-transform: translate(-50%, -50%) scale(1, 1);
-        -ms-transform: translate(-50%, -50%) scale(1, 1);
-            transform: translate(-50%, -50%) scale(1, 1); }
+    transform: translate(-50%, -50%) scale(1, 1); }
   a.button.aux-fill, button.aux-fill,
   input[type="button"].aux-fill,
   .aux-button.aux-fill {
-    -webkit-transition: background-color 450ms;
-            transition: background-color 450ms; }
+    transition: background-color 450ms; }
     a.button.aux-fill .aux-overlay, button.aux-fill .aux-overlay,
     input[type="button"].aux-fill .aux-overlay,
     .aux-button.aux-fill .aux-overlay {
@@ -1986,8 +1889,7 @@ input[type="button"],
   .aux-button .aux-text {
     display: inline-block;
     vertical-align: middle;
-    -webkit-transition: -webkit-transform 450ms, opacity 450ms;
-            transition: transform 450ms, opacity 450ms; }
+    transition: transform 450ms, opacity 450ms; }
   a.button.aux-icon-left .aux-icon, a.button.aux-icon-left-animate .aux-icon, button.aux-icon-left .aux-icon, button.aux-icon-left-animate .aux-icon,
   input[type="button"].aux-icon-left .aux-icon,
   input[type="button"].aux-icon-left-animate .aux-icon,
@@ -2007,15 +1909,11 @@ input[type="button"],
   a.button.aux-icon-left-animate .aux-icon, button.aux-icon-left-animate .aux-icon,
   input[type="button"].aux-icon-left-animate .aux-icon,
   .aux-button.aux-icon-left-animate .aux-icon {
-    -webkit-transform: translateX(-400%);
-        -ms-transform: translateX(-400%);
-            transform: translateX(-400%); }
+    transform: translateX(-400%); }
   a.button.aux-icon-left-animate .aux-text, button.aux-icon-left-animate .aux-text,
   input[type="button"].aux-icon-left-animate .aux-text,
   .aux-button.aux-icon-left-animate .aux-text {
-    -webkit-transform: translateX(-1em);
-        -ms-transform: translateX(-1em);
-            transform: translateX(-1em); }
+    transform: translateX(-1em); }
   a.button.aux-icon-left-animate:hover .aux-icon,
   a.button.aux-icon-left-animate:hover .aux-text, button.aux-icon-left-animate:hover .aux-icon,
   button.aux-icon-left-animate:hover .aux-text,
@@ -2023,21 +1921,15 @@ input[type="button"],
   input[type="button"].aux-icon-left-animate:hover .aux-text,
   .aux-button.aux-icon-left-animate:hover .aux-icon,
   .aux-button.aux-icon-left-animate:hover .aux-text {
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
   a.button.aux-icon-right-animate .aux-icon, button.aux-icon-right-animate .aux-icon,
   input[type="button"].aux-icon-right-animate .aux-icon,
   .aux-button.aux-icon-right-animate .aux-icon {
-    -webkit-transform: translateX(400%);
-        -ms-transform: translateX(400%);
-            transform: translateX(400%); }
+    transform: translateX(400%); }
   a.button.aux-icon-right-animate .aux-text, button.aux-icon-right-animate .aux-text,
   input[type="button"].aux-icon-right-animate .aux-text,
   .aux-button.aux-icon-right-animate .aux-text {
-    -webkit-transform: translateX(1em);
-        -ms-transform: translateX(1em);
-            transform: translateX(1em); }
+    transform: translateX(1em); }
   a.button.aux-icon-right-animate:hover .aux-icon,
   a.button.aux-icon-right-animate:hover .aux-text, button.aux-icon-right-animate:hover .aux-icon,
   button.aux-icon-right-animate:hover .aux-text,
@@ -2045,9 +1937,7 @@ input[type="button"],
   input[type="button"].aux-icon-right-animate:hover .aux-text,
   .aux-button.aux-icon-right-animate:hover .aux-icon,
   .aux-button.aux-icon-right-animate:hover .aux-text {
-    -webkit-transform: translateX(0px);
-        -ms-transform: translateX(0px);
-            transform: translateX(0px); }
+    transform: translateX(0px); }
   a.button.aux-icon-over .aux-icon, button.aux-icon-over .aux-icon,
   input[type="button"].aux-icon-over .aux-icon,
   .aux-button.aux-icon-over .aux-icon {
@@ -2056,11 +1946,8 @@ input[type="button"],
     top: 50%;
     opacity: 0;
     z-index: 2;
-    -webkit-transform: translate(-200%, -50%);
-        -ms-transform: translate(-200%, -50%);
-            transform: translate(-200%, -50%);
-    -webkit-transition: -webkit-transform 450ms, opacity 450ms;
-            transition: transform 450ms, opacity 450ms; }
+    transform: translate(-200%, -50%);
+    transition: transform 450ms, opacity 450ms; }
   a.button.aux-icon-over .aux-overlay, button.aux-icon-over .aux-overlay,
   input[type="button"].aux-icon-over .aux-overlay,
   .aux-button.aux-icon-over .aux-overlay {
@@ -2068,9 +1955,7 @@ input[type="button"],
   a.button.aux-icon-over:hover .aux-icon, button.aux-icon-over:hover .aux-icon,
   input[type="button"].aux-icon-over:hover .aux-icon,
   .aux-button.aux-icon-over:hover .aux-icon {
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     opacity: 1; }
   .rtl a.button.aux-icon-left .aux-icon, .rtl a.button.aux-icon-left-animate .aux-icon, .rtl button.aux-icon-left .aux-icon, .rtl button.aux-icon-left-animate .aux-icon, .rtl
   input[type="button"].aux-icon-left .aux-icon, .rtl
@@ -2094,15 +1979,11 @@ input[type="button"],
   .rtl a.button.aux-icon-left-animate .aux-icon, .rtl button.aux-icon-left-animate .aux-icon, .rtl
   input[type="button"].aux-icon-left-animate .aux-icon, .rtl
   .aux-button.aux-icon-left-animate .aux-icon {
-    -webkit-transform: translateX(400%);
-        -ms-transform: translateX(400%);
-            transform: translateX(400%); }
+    transform: translateX(400%); }
   .rtl a.button.aux-icon-left-animate .aux-text, .rtl button.aux-icon-left-animate .aux-text, .rtl
   input[type="button"].aux-icon-left-animate .aux-text, .rtl
   .aux-button.aux-icon-left-animate .aux-text {
-    -webkit-transform: translateX(1em);
-        -ms-transform: translateX(1em);
-            transform: translateX(1em); }
+    transform: translateX(1em); }
   .rtl a.button.aux-icon-left-animate:hover .aux-icon,
   .rtl a.button.aux-icon-left-animate:hover .aux-text, .rtl button.aux-icon-left-animate:hover .aux-icon,
   .rtl button.aux-icon-left-animate:hover .aux-text, .rtl
@@ -2112,21 +1993,15 @@ input[type="button"],
   .aux-button.aux-icon-left-animate:hover .aux-icon,
   .rtl
   .aux-button.aux-icon-left-animate:hover .aux-text {
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0); }
+    transform: translateX(0); }
   .rtl a.button.aux-icon-right-animate .aux-icon, .rtl button.aux-icon-right-animate .aux-icon, .rtl
   input[type="button"].aux-icon-right-animate .aux-icon, .rtl
   .aux-button.aux-icon-right-animate .aux-icon {
-    -webkit-transform: translateX(-400%);
-        -ms-transform: translateX(-400%);
-            transform: translateX(-400%); }
+    transform: translateX(-400%); }
   .rtl a.button.aux-icon-right-animate .aux-text, .rtl button.aux-icon-right-animate .aux-text, .rtl
   input[type="button"].aux-icon-right-animate .aux-text, .rtl
   .aux-button.aux-icon-right-animate .aux-text {
-    -webkit-transform: translateX(-1em);
-        -ms-transform: translateX(-1em);
-            transform: translateX(-1em); }
+    transform: translateX(-1em); }
   .rtl a.button.aux-icon-right-animate:hover .aux-icon,
   .rtl a.button.aux-icon-right-animate:hover .aux-text, .rtl button.aux-icon-right-animate:hover .aux-icon,
   .rtl button.aux-icon-right-animate:hover .aux-text, .rtl
@@ -2136,22 +2011,16 @@ input[type="button"],
   .aux-button.aux-icon-right-animate:hover .aux-icon,
   .rtl
   .aux-button.aux-icon-right-animate:hover .aux-text {
-    -webkit-transform: translateX(0px);
-        -ms-transform: translateX(0px);
-            transform: translateX(0px); }
+    transform: translateX(0px); }
   .rtl a.button.aux-icon-over .aux-icon, .rtl button.aux-icon-over .aux-icon, .rtl
   input[type="button"].aux-icon-over .aux-icon, .rtl
   .aux-button.aux-icon-over .aux-icon {
     left: -50%;
-    -webkit-transform: translate(200%, -50%);
-        -ms-transform: translate(200%, -50%);
-            transform: translate(200%, -50%); }
+    transform: translate(200%, -50%); }
   .rtl a.button.aux-icon-over:hover .aux-icon, .rtl button.aux-icon-over:hover .aux-icon, .rtl
   input[type="button"].aux-icon-over:hover .aux-icon, .rtl
   .aux-button.aux-icon-over:hover .aux-icon {
-    -webkit-transform: translate(50%, -50%);
-        -ms-transform: translate(50%, -50%);
-            transform: translate(50%, -50%); }
+    transform: translate(50%, -50%); }
   a.button.aux-black, button.aux-black,
   input[type="button"].aux-black,
   .aux-button.aux-black {
@@ -2662,8 +2531,7 @@ input[type="reset"] {
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
-  -webkit-transition: all 450ms;
-          transition: all 450ms; }
+  transition: all 450ms; }
   input[type="submit"]:focus,
   input[type="reset"]:focus {
     outline: none; }
@@ -2676,11 +2544,8 @@ input[type="reset"] {
     width: 120%;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(0, 0);
-        -ms-transform: translate(-50%, -50%) scale(0, 0);
-            transform: translate(-50%, -50%) scale(0, 0);
-    -webkit-transition: -webkit-transform 450ms cubic-bezier(0.75, 0.1, 0.25, 0.9);
-            transition: transform 450ms cubic-bezier(0.75, 0.1, 0.25, 0.9); }
+    transform: translate(-50%, -50%) scale(0, 0);
+    transition: transform 450ms cubic-bezier(0.75, 0.1, 0.25, 0.9); }
     input[type="submit"] .aux-overlay::after,
     input[type="reset"] .aux-overlay::after {
       position: relative;
@@ -2693,13 +2558,10 @@ input[type="reset"] {
     width: 120%; }
   input[type="submit"]:hover .aux-overlay,
   input[type="reset"]:hover .aux-overlay {
-    -webkit-transform: translate(-50%, -50%) scale(1, 1);
-        -ms-transform: translate(-50%, -50%) scale(1, 1);
-            transform: translate(-50%, -50%) scale(1, 1); }
+    transform: translate(-50%, -50%) scale(1, 1); }
   input[type="submit"].aux-fill,
   input[type="reset"].aux-fill {
-    -webkit-transition: background-color 450ms;
-            transition: background-color 450ms; }
+    transition: background-color 450ms; }
     input[type="submit"].aux-fill .aux-overlay,
     input[type="reset"].aux-fill .aux-overlay {
       display: none; }

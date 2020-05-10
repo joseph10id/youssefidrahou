@@ -9,7 +9,7 @@
 */
 get_header(); ?>
 
-    <main id="main" <?php auxin_content_main_class( 'search-resault' ); ?> >
+    <main id="main" <?php auxin_content_main_class( 'search-result' ); ?> >
         <div class="aux-wrapper">
             <div class="aux-container aux-fold">
 

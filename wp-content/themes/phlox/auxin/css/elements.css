@@ -44,6 +44,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 12px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   white-space: nowrap;
   color: #666;
@@ -60,11 +62,15 @@
   border-bottom: 1px solid #ccc;
   border-radius: 3px;
   cursor: pointer;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.57);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.57);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.57);
 }
 .rect:hover {
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.75);
 }
 .rect:active {
@@ -73,6 +79,8 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid #777777;
   border-bottom: 1px solid #555555;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.58), inset 0 1px 6px rgba(0, 0, 0, 0.07), inset 0 -14px 13px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.58), inset 0 1px 6px rgba(0, 0, 0, 0.07), inset 0 -14px 13px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.58), inset 0 1px 6px rgba(0, 0, 0, 0.07), inset 0 -14px 13px rgba(0, 0, 0, 0.2);
 }
 
@@ -84,8 +92,8 @@
   -moz-appearance: button;
   appearance: button;
   -webkit-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 12px;
@@ -103,6 +111,8 @@
   border: 1px solid #ADADAD;
   border-radius: 1px;
   cursor: pointer;
+  -moz-box-shadow: inset 0 -2px 0 #DFDFDF;
+  -webkit-box-shadow: inset 0 -2px 0 #DFDFDF;
   box-shadow: inset 0 -2px 0 #DFDFDF;
 }
 .cl-select option, .av3_container select option {
@@ -122,6 +132,8 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid #777777;
   border-bottom: 1px solid #555555;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.58);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.58);
 }
 .cl-select::before, .av3_container select::before {
@@ -158,11 +170,15 @@
   border-radius: 100%;
   border: 1px solid #d8d8d8;
   border-bottom: 1px solid #ccc;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 6px 7px rgba(255, 255, 255, 0.57);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 6px 7px rgba(255, 255, 255, 0.57);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 6px 7px rgba(255, 255, 255, 0.57);
 }
 .av3_container input[type="radio"]:hover {
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 6px 7px rgba(255, 255, 255, 0.78);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 6px 7px rgba(255, 255, 255, 0.78);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 6px 7px rgba(255, 255, 255, 0.78);
 }
 .av3_container input[type="radio"]:active {
@@ -170,6 +186,8 @@
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.53);
   border: 1px solid #d2d2d2;
   border-bottom: 1px solid #d8d8d8;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.58), inset 0 1px 6px rgba(0, 0, 0, 0.07), inset 0 -6px 7px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.58), inset 0 1px 6px rgba(0, 0, 0, 0.07), inset 0 -6px 7px rgba(255, 255, 255, 0.2);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.58), inset 0 1px 6px rgba(0, 0, 0, 0.07), inset 0 -6px 7px rgba(255, 255, 255, 0.2);
 }
 .av3_container input[type="radio"]:checked::before {
@@ -220,6 +238,8 @@
   color: #696969;
   border: 1px solid #CCCCCC;
   border-bottom: 1px solid #d8d8d8;
+  -moz-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 2px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 2px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 .axi_ui_slider .ui-widget-content .ui-state-default {
@@ -230,18 +250,24 @@
   border-bottom: 1px solid #bbbbbb;
   border-radius: 100%;
   cursor: pointer;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
 }
 .axi_ui_slider .ui-widget-content .ui-state-hover {
   outline: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
 }
 .axi_ui_slider .ui-widget-content .ui-state-focus {
   outline: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
 }
 .axi_ui_slider .ui-widget-header {
@@ -250,6 +276,8 @@
   color: #ffffff;
   font-weight: bold;
   border-radius: 31px;
+  -moz-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.25);
   box-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 2px 5px rgba(255, 255, 255, 0.25);
 }
 .axi_ui_slider .ui-widget-header .ui-state-default {
@@ -260,18 +288,24 @@
   border-bottom: 1px solid #bbbbbb;
   border-radius: 100%;
   cursor: pointer;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
 }
 .axi_ui_slider .ui-widget-header .ui-state-hover {
   outline: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
 }
 .axi_ui_slider .ui-widget-header .ui-state-focus {
   outline: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
 }
 .axi_ui_slider .ui-state-default {
@@ -282,18 +316,24 @@
   border-bottom: 1px solid #bbbbbb;
   border-radius: 100%;
   cursor: pointer;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.57);
 }
 .axi_ui_slider .ui-state-hover {
   outline: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
 }
 .axi_ui_slider .ui-state-focus {
   outline: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.69);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 7px 6px rgba(255, 255, 255, 0.75);
 }
 .axi_ui_slider .ui-slider {
@@ -337,6 +377,8 @@
   top: 4px;
   left: 4px;
   border-radius: 100%;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 1px 3px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 1px 3px rgba(0, 0, 0, 0.35);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 .axi_ui_slider .ui-slider-horizontal .ui-slider-range {
@@ -366,6 +408,8 @@
   border: 1px solid #d8d8d8;
   border-bottom: 1px solid #ccc;
   border-radius: 3px;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.17);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), inset 0 1px 0 rgba(255, 255, 255, 0.69), inset 0 -1px 0 rgba(0, 0, 0, 0.0187), inset 0 16px 15px rgba(255, 255, 255, 0.17);
 }
 
@@ -387,6 +431,8 @@
   height: 2.5em;
   margin-bottom: 6px;
   border: 1px dashed #999999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .sortbox .ui-sortable-helper {
@@ -433,9 +479,7 @@
   position: relative;
   vertical-align: middle;
   width: 55px;
-  -webkit-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   box-sizing: content-box;
   box-shadow: rgba(0, 0, 0, 0.13) 0 6px 0 0 inset !important;
 }

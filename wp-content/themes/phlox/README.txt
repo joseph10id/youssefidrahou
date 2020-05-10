@@ -3,8 +3,8 @@ Contributors: averta, averta_support
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-colors, editor-style, featured-images, featured-image-header, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce, portfolio, threaded-comments, translation-ready
 Requires PHP: 5.4
 Requires at least: 4.6
-Tested up to: 5.3.3
-Stable tag: 2.5.9
+Tested up to: 5.4.0
+Stable tag: 2.5.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,27 @@ Phlox bundles the following third-party resources:
 
 
 == Changelog ==
+
+= 2.5.13 =
+- [Improvement]: Improvements in Modern button element applied.
+- [Improvement]: Improvement for search and menu element applied.
+
+
+= 2.5.11 =
+- [New]: New responsive table element added.
+- [Improvement]: Improvements in appear animation for header builder applied.
+- [Improvement]: Improvements for Modern button element applied.
+- [Fix]: Incompatibility notice in WooCommerce setup wizard fixed.
+- [Fix]: Website social options are going to be deprecated soon.
+
+
+= 2.5.10 =
+- [New]: New Elementor element "Responsive Table" added.
+- [Improvement]: Automatically turn off the sidebar in the search result page if no widget is set for the sidebar.
+- [Improvement]: Some minor improvements for Modern button applied.
+- [Fix]: Fixing an issue that results in the missing featured image for custom post types.
+- [Fix]: Remove focus outline from accordion and FAQ element.
+
 
 = 2.5.9 =
 - [Improvement]: Improvements for dimensions controller in customizer applied.

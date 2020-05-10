@@ -59,6 +59,8 @@ class Auxin_Frontend_Assets {
         wp_enqueue_script( 'auxin-scripts' , THEME_URL . 'js/scripts.min.js' , array('jquery', 'auxin-plugins'), $this->version, TRUE );
 
 
+        // responsive table
+        wp_register_script( 'stacktable' , THEME_URL . 'js/solo/stacktable.js' , array( 'jquery' ), $this->version, TRUE );
 
         // Print JS Object /////////////////////////////////////////////////////
 
@@ -166,9 +168,9 @@ class Auxin_Frontend_Assets {
 
                 $uploads   = wp_get_upload_dir();
                 $css_file  = $uploads['baseurl'] . '/' . THEME_ID . '/custom.css';
-                
+
                 wp_enqueue_style( 'auxin-custom', set_url_scheme( $css_file ), array('auxin-base'), $this->custom_version );
-                
+
             }
         }
     }

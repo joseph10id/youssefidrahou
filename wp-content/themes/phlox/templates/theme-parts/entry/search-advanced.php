@@ -25,9 +25,10 @@ if ( isset( $_GET['cat'] ) && !empty($_GET['cat']) ) {
         )
     );
 }
-if ( isset( $_GET['paged'] ) && !empty($_GET['paged']) ) {
-    $args['paged'] = esc_html( $_GET['paged'] );
-}
+
+global $paged;
+$args['paged'] = $paged;
+
 // Start Searching
 $wp_query = new WP_Query( $args );
 if ( $wp_query->have_posts() ) {

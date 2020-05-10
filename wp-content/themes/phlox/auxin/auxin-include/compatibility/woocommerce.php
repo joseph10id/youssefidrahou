@@ -64,7 +64,8 @@ add_filter( 'woocommerce_template_path', 'auxin_woocommerce_template_path' );
  * Add theme support for WooCommerce 3 zoom and slider
  */
 function auxin_woocommerce_setup() {
-
+    
+    add_theme_support( 'woocommerce' );
     // Inline Zoom functionality
     add_theme_support( 'wc-product-gallery-zoom' );
     // Default WooCommerce slider (flexslider)
